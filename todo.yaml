@@ -1,0 +1,13 @@
+---
+serializers:
+  # can add some kind of special aws alert for search or results etc
+  # can use celery as well, or just create aws client to publish alert message
+
+tests:
+  need to check that tests work
+
+aws:
+  can add simple cfn for alert publish message
+
+deployment script:
+  add deployment script to run aws commands in sh or bat
