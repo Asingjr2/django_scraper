@@ -1,7 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
-
 import factory
 from .factories import LinkModelFactory
 
@@ -19,14 +18,14 @@ class ScapeHomeTestCase(TestCase):
     def test_200(self):
         url = reverse('home')
         client = Client()
-        response = Client.get(url)
-        self.assertIsEqual(response, 200) 
+        response = client.get(url)
+        self.assertIs(response.status_code, 200) 
 
 
 class ClearLinksTestCase(TestCase):
     """Checks response for valid delete endpoint request."""
     def test_200(self):
-        url = reverse('delete')
+        url = reverse('clear_links')
         client = Client()
-        response = Client.delete(url)
-        self.assertIsEqual(response, 200) 
+        response = client.delete(url)
+        self.assertEqual(response.status_code, 302) 
